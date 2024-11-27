@@ -1,0 +1,54 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "1.0",
+    "title" : "PruebaInterno"
+  },
+  "host" : "preapi.integracion.pga.prosegur.net:8066",
+  "basePath" : "/smartcash.api.qa",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/api/smartcash" : {
+      "get" : {
+        "operationId" : "pruebainterna",
+        "parameters" : [ {
+          "name" : "v",
+          "in" : "query",
+          "description" : "The routing key parameter.",
+          "required" : true,
+          "type" : "string",
+          "enum" : [ "v" ]
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "success"
+          },
+          "200" : {
+            "description" : "OK"
+          }
+        },
+        "x-axway" : { }
+      }
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "backendURLs" : [ "https://localhost:8445/smartcash.api.qa", "http://localhost:8082/smartcash.api.qa" ],
+    "basePaths" : [ "https://preapi.integracion.pga.prosegur.net:8066" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/04eb224a-565d-45e8-b563-72340302f3bc/ios-swift",
+      "titanium" : "/discovery/sdk/04eb224a-565d-45e8-b563-72340302f3bc/titanium",
+      "android" : "/discovery/sdk/04eb224a-565d-45e8-b563-72340302f3bc/android",
+      "nodejs" : "/discovery/sdk/04eb224a-565d-45e8-b563-72340302f3bc/nodejs"
+    },
+    "apiResourceType" : "swagger11ex",
+    "id" : "04eb224a-565d-45e8-b563-72340302f3bc",
+    "state" : "published",
+    "accessGrantedDate" : 1720009152126
+  }
+}
