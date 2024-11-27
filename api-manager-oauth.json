@@ -1,0 +1,82 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "1.0",
+    "title" : "PruebaAPIManagerOauthAxway",
+    "x-summary" : "PruebaAPIManager"
+  },
+  "host" : "preapi.integracion.pga.prosegur.net:8065",
+  "basePath" : "/prueba/apiManager/axway",
+  "schemes" : [ "https" ],
+  "security" : [ {
+    "OAuthAccessCode" : [ "openid" ]
+  } ],
+  "paths" : {
+    "/ok" : {
+      "get" : {
+        "summary" : "respuesta",
+        "description" : "Respondemos con un OK",
+        "operationId" : "respuesta",
+        "parameters" : [ {
+          "name" : "v",
+          "in" : "query",
+          "description" : "The routing key parameter.",
+          "required" : true,
+          "type" : "string",
+          "enum" : [ "v" ]
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          },
+          "default" : {
+            "description" : "success"
+          }
+        },
+        "x-axway" : { }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "OAuthAccessCode" : {
+      "description" : "OAuth",
+      "type" : "oauth2",
+      "authorizationUrl" : "https://preapi.integracion.pga.prosegur.net/api/oauth/token",
+      "tokenUrl" : "https://preapi.integracion.pga.prosegur.net/api/oauth/token",
+      "flow" : "accessCode",
+      "scopes" : {
+        "openid" : ""
+      },
+      "x-axway" : {
+        "clientSecretName" : "client_secret",
+        "authorizationHeaderPrefix" : "",
+        "accessTokenLocationQueryString" : "Bearer",
+        "clientIdName" : "client_id",
+        "tokenName" : "access_code",
+        "scopesMatching" : "Any",
+        "accessTokenLocation" : "HEADER",
+        "typeDisplayName" : "OAuth 2.0"
+      }
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "backendURLs" : [ "https://localhost:8443/prueba/apiManager", "http://localhost:8080/prueba/apiManager" ],
+    "basePaths" : [ "https://preapi.integracion.pga.prosegur.net:8065" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/e33ae763-00ed-437b-ad68-b04c83eb2887/ios-swift",
+      "titanium" : "/discovery/sdk/e33ae763-00ed-437b-ad68-b04c83eb2887/titanium",
+      "android" : "/discovery/sdk/e33ae763-00ed-437b-ad68-b04c83eb2887/android",
+      "nodejs" : "/discovery/sdk/e33ae763-00ed-437b-ad68-b04c83eb2887/nodejs"
+    },
+    "apiResourceType" : "swagger11ex",
+    "id" : "e33ae763-00ed-437b-ad68-b04c83eb2887",
+    "state" : "unpublished",
+    "accessGrantedDate" : 1718956394255
+  }
+}
