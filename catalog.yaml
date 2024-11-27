@@ -1,11 +1,49 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: Axway
-  description: Api2 Docs
+  name: SwaggerTest
+  description: API Test Swagger
 spec:
   type: openapi
   owner: e-gagcosta@neoris.com
   lifecycle: experimental
   definition:
     $text: https://apidocs.axway.com/api_documentation/apimanager/7.7.0/api-manager-V_1_4-oas3.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: PruebaAPIManager
+  description: API for Manager
+spec:
+  type: openapi
+  owner: e-gagcosta@neoris.com
+  lifecycle: experimental
+  definition:
+    $text: https://github.com/GeovanaAugusta/test-backstage/blob/main/api-manager.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: PruebaAPIManagerOauthAxway
+  description: API for Manager
+spec:
+  type: openapi
+  owner: e-gagcosta@neoris.com
+  lifecycle: experimental
+  definition:
+    $text: https://github.com/GeovanaAugusta/test-backstage/blob/main/api-manager-oauth.json
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: PruebaInterno
+  description: API for Manager
+spec:
+  type: openapi
+  owner: e-gagcosta@neoris.com
+  lifecycle: experimental
+  definition:
+    $text: https://github.com/GeovanaAugusta/test-backstage/blob/main/prueba-interno.json
+    
+    
