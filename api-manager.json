@@ -1,0 +1,82 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "",
+    "version" : "1.0",
+    "title" : "PruebaAPIManager",
+    "x-summary" : "PruebaAPIManager"
+  },
+  "host" : "preapi.integracion.pga.prosegur.net:8065",
+  "basePath" : "/prueba/apiManager",
+  "schemes" : [ "https" ],
+  "security" : [ {
+    "OAuth (External)AccessCode" : [ "https://b2c.prosegur.dev/2f2141aa-2152-44c5-9ac2-0d96a3dfb6f2" ]
+  } ],
+  "paths" : {
+    "/ok" : {
+      "get" : {
+        "summary" : "respuesta",
+        "description" : "Respondemos con un OK",
+        "operationId" : "respuesta",
+        "parameters" : [ {
+          "name" : "v",
+          "in" : "query",
+          "description" : "The routing key parameter.",
+          "required" : true,
+          "type" : "string",
+          "enum" : [ "hola" ]
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "success"
+          },
+          "200" : {
+            "description" : "OK"
+          }
+        },
+        "x-axway" : { }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "OAuth (External)AccessCode" : {
+      "description" : "OAuth (External)",
+      "type" : "oauth2",
+      "authorizationUrl" : "https://login.microsoftonline.com/7be34711-5ad2-4d22-9369-ddac0b818209/oauth2/v2.0/token",
+      "tokenUrl" : "https://login.microsoftonline.com/7be34711-5ad2-4d22-9369-ddac0b818209/oauth2/v2.0/token",
+      "flow" : "accessCode",
+      "scopes" : {
+        "https://b2c.prosegur.dev/2f2141aa-2152-44c5-9ac2-0d96a3dfb6f2" : ""
+      },
+      "x-axway" : {
+        "clientSecretName" : "client_secret",
+        "authorizationHeaderPrefix" : "",
+        "accessTokenLocationQueryString" : "Bearer",
+        "clientIdName" : "client_id",
+        "tokenName" : "access_code",
+        "scopesMatching" : "Any",
+        "accessTokenLocation" : "HEADER",
+        "typeDisplayName" : "OAuth 2.0"
+      }
+    }
+  },
+  "x-axway" : {
+    "serviceType" : "rest",
+    "backendURLs" : [ "https://localhost:8443/prueba/apiManager", "http://localhost:8080/prueba/apiManager" ],
+    "basePaths" : [ "https://preapi.integracion.pga.prosegur.net:8065" ],
+    "expired" : false,
+    "retirementDate" : 0,
+    "corsEnabled" : true,
+    "deprecated" : false,
+    "availableSDK" : {
+      "ios-swift" : "/discovery/sdk/bd7021c5-ef11-4dc9-a184-d754f87c0914/ios-swift",
+      "titanium" : "/discovery/sdk/bd7021c5-ef11-4dc9-a184-d754f87c0914/titanium",
+      "android" : "/discovery/sdk/bd7021c5-ef11-4dc9-a184-d754f87c0914/android",
+      "nodejs" : "/discovery/sdk/bd7021c5-ef11-4dc9-a184-d754f87c0914/nodejs"
+    },
+    "apiResourceType" : "swagger11ex",
+    "id" : "bd7021c5-ef11-4dc9-a184-d754f87c0914",
+    "state" : "unpublished",
+    "accessGrantedDate" : 1718629318387
+  }
+}
